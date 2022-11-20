@@ -1,6 +1,6 @@
-package ContactBook.Implement;
+package Implement;
 
-import ContactBook.Interfaces.UserInterface;
+import Interfaces.UserInterface;
 
 import java.util.Scanner;
 

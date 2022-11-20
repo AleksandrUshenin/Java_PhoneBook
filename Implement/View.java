@@ -1,8 +1,8 @@
-package ContactBook.Implement;
+package Implement;
 
-import ContactBook.Interfaces.IContact;
-import ContactBook.Interfaces.IView;
-import ContactBook.Interfaces.UserInterface;
+import Interfaces.IContact;
+import Interfaces.IView;
+import Interfaces.UserInterface;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class View implements IView {
 
         userInterface.print("\n\t\tТелефонная кника");
         userInterface.print("=============================================");
-        userInterface.print("\n\t 1 - %s с помощью json \n\t 2 - %s с помощью Xml".formatted(message, message));
+        userInterface.print("\n\t 1 - " + message +" с помощью json \n\t 2 - " + message + " с помощью Xml");   //.formatted(message, message));
     }
 
     @Override

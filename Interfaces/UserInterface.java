@@ -1,4 +1,4 @@
-package ContactBook.Interfaces;
+package Interfaces;
 
 public interface UserInterface {
     void print(String message);

@@ -1,4 +1,5 @@
-package ContactBook.Interfaces;
+//package ContactBook.Interfaces;
+package Interfaces;
 
 public interface IContact {
     int getId();

@@ -1,7 +1,7 @@
-package ContactBook.Implement;
+package Implement;
 
-import ContactBook.Interfaces.IContact;
-import ContactBook.Interfaces.IController;
+import Interfaces.IContact;
+import Interfaces.IController;
 
 import java.util.List;
 
@@ -47,7 +47,7 @@ public class Controller implements IController {
         {
             handlerXml.exporter(bookList);
         }
-        doLogger(1, "Сохранено через %s способ".formatted(res));
+        doLogger(1, "Сохранено через %s способ " + res); //.formatted(res)
     }
 
     @Override
@@ -76,7 +76,7 @@ public class Controller implements IController {
         }
         catch (Exception ex)
         {
-            doLogger(3, "Ошибка поиска типом: %s".formatted(indexTypeSearch));
+            doLogger(3, "Ошибка поиска типом: " + indexTypeSearch);//.formatted(indexTypeSearch));
         }
     }
 
@@ -85,7 +85,7 @@ public class Controller implements IController {
         if (contact == null)
         {
             view.printInDisplay("Контакт не найден!");
-            doLogger(1, "Контакт не найден! %s".formatted(contact.toString()));
+            doLogger(1, "Контакт не найден! " + contact.toString()); //.formatted(contact.toString())
         }
     }
 
@@ -103,7 +103,7 @@ public class Controller implements IController {
         String number = view.readLine("Введите номер: ");
         contactBook.addContact(name, patronimic, surname, number);
 
-        doLogger(1, "Добавлен контакт: %s %s %s %s".formatted(name, patronimic, surname, number));
+        doLogger(1, "Добавлен контакт: %s %s %s %s".format(name, patronimic, surname, number));//.formatted(name, patronimic, surname, number));
     }
 
     @Override
@@ -112,11 +112,11 @@ public class Controller implements IController {
         boolean res = contactBook.deleteContact(id);
         if (res)
         {
-            doLogger(1, "Удален контакт id: %s".formatted(id));
+            doLogger(1, "Удален контакт id: " + id); //.formatted(id)
         }
         else
         {
-            doLogger(1, "Ошибка при удалении контакт по id: %s".formatted(id));
+            doLogger(1, "Ошибка при удалении контакт по id: " + id);//.formatted(id));
         }
     }
 

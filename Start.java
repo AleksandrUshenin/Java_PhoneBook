@@ -1,13 +1,13 @@
-package ContactBook;
+//package ContactBook;
 
-import ContactBook.Implement.ConsoleUserInterface;
-import ContactBook.Implement.ContactBook;
-import ContactBook.Implement.Controller;
-import ContactBook.Implement.View;
-import ContactBook.Interfaces.IContact;
-import ContactBook.Interfaces.IContactBook;
-import ContactBook.Interfaces.IController;
-import ContactBook.Interfaces.UserInterface;
+import Implement.ConsoleUserInterface;
+import Implement.ContactBook;
+import Implement.Controller;
+import Implement.View;
+import Interfaces.IContact;
+import Interfaces.IContactBook;
+import Interfaces.IController;
+import Interfaces.UserInterface;
 
 public class Start {
     public static void main(String[] args) {

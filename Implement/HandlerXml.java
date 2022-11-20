@@ -1,4 +1,4 @@
-package ContactBook.Implement;
+package Implement;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
@@ -10,8 +10,8 @@ import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 
-import ContactBook.Interfaces.IContact;
-import ContactBook.Interfaces.IHandler;
+import Interfaces.IContact;
+import Interfaces.IHandler;
 
 public class HandlerXml implements IHandler {
 

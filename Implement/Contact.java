@@ -1,6 +1,6 @@
-package ContactBook.Implement;
+package Implement;
 
-import ContactBook.Interfaces.IContact;
+import Interfaces.IContact;
 
 import java.io.Serializable;
 
@@ -50,6 +50,7 @@ public class Contact implements IContact, Serializable {
 
     @Override
     public String toString() {
-        return "id:%s Name:%s patronymic:%s surname:%s number:%s".formatted(id, name, patronymic, surname, number);
+        var s = "id:" + id + " Name:" + name + " patronymic:"+ patronymic + " surname:" + surname +" number:" + number;
+        return s;
     }
 }

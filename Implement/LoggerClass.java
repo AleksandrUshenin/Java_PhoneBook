@@ -1,4 +1,4 @@
-package ContactBook.Implement;
+package Implement;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -37,7 +37,7 @@ public class LoggerClass {
         var t = date.toString();
         try(FileWriter fw = new FileWriter("log.txt", true))
         {
-            fw.write("%s\t|Date:%s|\n".formatted(message, t));
+            fw.write("%s\t|Date:%s|\n".format(message, t));  //.formatted(message, t));
             fw.flush();
         }
         catch (Exception ex)

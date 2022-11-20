@@ -1,9 +1,9 @@
-package ContactBook;
+//package ContactBook;
 
-import ContactBook.Interfaces.IContact;
-import ContactBook.Interfaces.IContactBook;
-import ContactBook.Interfaces.IController;
-import ContactBook.Interfaces.IView;
+import Interfaces.IContact;
+import Interfaces.IContactBook;
+import Interfaces.IController;
+import Interfaces.IView;
 
 import java.util.ArrayList;
 import java.util.List;

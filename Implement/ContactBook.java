@@ -1,7 +1,7 @@
-package ContactBook.Implement;
+package Implement;
 
-import ContactBook.Interfaces.IContact;
-import ContactBook.Interfaces.IContactBook;
+import Interfaces.IContact;
+import Interfaces.IContactBook;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -54,7 +54,7 @@ public class ContactBook implements IContactBook {
     @Override
     public IContact getBySurname(String surname) {
         for (var con : contactList) {
-            if(con.getSurname() == surname) {
+            if(con.getSurname().equals(surname)) {//  == surname
                 return con;
             }
         }
