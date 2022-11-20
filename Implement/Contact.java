@@ -1,0 +1,55 @@
+package ContactBook.Implement;
+
+import ContactBook.Interfaces.IContact;
+
+import java.io.Serializable;
+
+public class Contact implements IContact, Serializable {
+    private int id;
+    private String name;
+    private String patronymic;
+    private String surname;
+    private String number;
+    public Contact(int id, String name, String patronymic, String surname, String number) {
+        this.id = id;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.surname = surname;
+        this.number = number;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+    @Override
+    public String getPatronymic() {
+        return patronymic;
+    }
+    @Override
+    public String getSurname() {
+        return surname;
+    }
+
+    @Override
+    public String getNumber() {
+        return number;
+    }
+
+    @Override
+    public void edit(String name, String patronymoc, String surname, String number) {
+        this.name = name;
+        this.patronymic = patronymoc;
+        this.surname = surname;
+        this.number = name;
+    }
+
+    @Override
+    public String toString() {
+        return "id:%s Name:%s patronymic:%s surname:%s number:%s".formatted(id, name, patronymic, surname, number);
+    }
+}
