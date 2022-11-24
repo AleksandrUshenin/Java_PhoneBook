@@ -9,15 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Model {
-    private IView view;
     private IController controller;
     //private IContactBook contactBook;
     private IContactBook contactBook;
     private List<IContact> ListContactBook;
 
-    public Model(IView view, IController controller, IContactBook contactBook/*,
-                 List<IContact> listContactBook*/) {
-        this.view = view;
+    public Model(IController controller, IContactBook contactBook) {
         this.controller = controller;
         this.contactBook = contactBook;
         //ListContactBook = listContactBook;
@@ -29,8 +26,8 @@ public class Model {
         boolean runer = true;
         while (runer)
         {
-            view.printMenu();
-            runer = doCommand(view.readLine(null));
+            controller.startDisplayPrint();
+            runer = doCommand(controller.getCommandForMenu());
         }
     }
 

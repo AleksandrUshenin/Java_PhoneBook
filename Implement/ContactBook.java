@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ContactBook implements IContactBook {
     private static int id;
-    private List<Contact> contactList;
+    private List<IContact> contactList;
 
     public ContactBook() {
         contactList = new ArrayList<>();
@@ -23,12 +23,12 @@ public class ContactBook implements IContactBook {
 
     @Override
     public void addContact(String name, String patronymoc, String surname, String number) {
-        contactList.add(new Contact(id++, name, patronymoc, surname, number));
+        contactList.add(ContactBilder.newContact(id++, name, patronymoc, surname, number));
     }
 
     @Override
     public void importContact(int id, String name, String patronymoc, String surname, String number) {
-        contactList.add(new Contact(id, name, patronymoc, surname, number));
+        contactList.add(ContactBilder.newContact(id, name, patronymoc, surname, number));
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ContactBook implements IContactBook {
         for (IContact c : contactList)
         {
             id = c.getId();
-            this.contactList.add((Contact)c);
+            this.contactList.add(c);
         }
         ++id;
     }
@@ -91,10 +91,6 @@ public class ContactBook implements IContactBook {
 
     @Override
     public List<IContact> getUnsorted() {
-        List<IContact> con = new ArrayList<>();
-        for (var c : contactList) {
-            con.add(c);
-        }
-        return con;
+        return contactList;
     }
 }

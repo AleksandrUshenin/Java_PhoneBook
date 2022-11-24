@@ -7,13 +7,9 @@ import java.util.Date;
 
 public class LoggerClass {
     private String path;
-
-//    public static void main(String[] args) {
-//        //logGer();
-//        log3();
-//    }
-    public LoggerClass()
-    {}
+    private String logFileName = "log.txt";
+    
+    
     private void logGer() {
         String path = System.getProperty("user.dir");
         File file = new File("Log1.txt");
@@ -31,11 +27,12 @@ public class LoggerClass {
         } catch (Exception ex)
         {}
     }
+    
     public void log(String message)
     {
         Date date = new Date();
         var t = date.toString();
-        try(FileWriter fw = new FileWriter("log.txt", true))
+        try(FileWriter fw = new FileWriter(logFileName, true))
         {
             fw.write("%s\t|Date:%s|\n".format(message, t));  //.formatted(message, t));
             fw.flush();

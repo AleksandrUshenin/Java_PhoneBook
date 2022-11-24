@@ -11,13 +11,14 @@ import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 
 import Interfaces.IContact;
+import Interfaces.IContactBook;
 import Interfaces.IHandler;
 
 public class HandlerXml implements IHandler {
 
-    private ContactBook contactBook;
+    private IContactBook contactBook;
 
-    public HandlerXml(ContactBook contactBook) {
+    public HandlerXml(IContactBook contactBook) {
         this.contactBook = contactBook;
     }
 

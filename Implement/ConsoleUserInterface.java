@@ -4,7 +4,7 @@ import Interfaces.UserInterface;
 
 import java.util.Scanner;
 
-public class ConsoleUserInterface implements UserInterface {
+public final class ConsoleUserInterface implements UserInterface {
     private Scanner scanner;
 
     public ConsoleUserInterface() {

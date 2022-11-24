@@ -1,27 +1,42 @@
 package Implement;
 
 import Interfaces.IContact;
+import Interfaces.IContactBook;
 import Interfaces.IController;
+import Interfaces.IHandler;
+import Interfaces.IView;
 
 import java.util.List;
 
 public class Controller implements IController {
-    private HandlerXml handlerXml;
-    private View view;
-    private ContactBook contactBook;
+    private IHandler handlerXml;
+    private IView view;
+    private IContactBook contactBook;
     //
     //
     //
 
-    public Controller(View view, ContactBook contactBook) {
+    public Controller(IView view, IContactBook contactBook, IHandler handlerXml) {
         this.view = view;
         this.contactBook = contactBook;
-        handlerXml = new HandlerXml(contactBook);
+        this.handlerXml = handlerXml;
+
         startLoad();
     }
 
     @Override
-    public List<IContact> loadData()
+    public void startDisplayPrint()
+    {
+        view.printMenu();
+    }
+    @Override
+    public String getCommandForMenu()
+    {
+        return view.readLine();
+    }
+
+    @Override
+    public void loadData()
     {
         view.printMenuLoadSave(1);
         var res = view.readLine();
@@ -32,8 +47,8 @@ public class Controller implements IController {
         {
             handlerXml.importer();
         }
-        //doLogger(1);
-        return null;
+        
+        doLogger(1, "Загрузка контактов при запуске приложения");
     }
 
     @Override

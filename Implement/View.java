@@ -63,6 +63,8 @@ public class View implements IView {
         userInterface.print(message);
         return userInterface.read();
     }
+    
+    @Override
     public String readLine() {
         return userInterface.read();
     }

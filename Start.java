@@ -3,20 +3,24 @@
 import Implement.ConsoleUserInterface;
 import Implement.ContactBook;
 import Implement.Controller;
+import Implement.HandlerXml;
 import Implement.View;
 import Interfaces.IContact;
 import Interfaces.IContactBook;
 import Interfaces.IController;
+import Interfaces.IHandler;
+import Interfaces.IView;
 import Interfaces.UserInterface;
 
-public class Start {
+public final class Start {
     public static void main(String[] args) {
         UserInterface userInterface = new ConsoleUserInterface();
-        View view = new View(userInterface);
-        ContactBook contactBook = new ContactBook();
-        IController controller = new Controller(view, contactBook);
+        IView view = new View(userInterface);
+        IContactBook contactBook = new ContactBook();
+        IHandler handler = new HandlerXml(contactBook);
+        IController controller = new Controller(view, contactBook, handler);
 
-        Model model = new Model(view, controller, contactBook);
+        Model model = new Model(controller, contactBook);
         model.run();
     }
 }

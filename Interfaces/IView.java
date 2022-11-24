@@ -9,4 +9,5 @@ public interface IView {
     void printBook(IContact contact);
     void printInDisplay(String message);
     String readLine(String message);
+    String readLine();
 }
